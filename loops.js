@@ -22,6 +22,16 @@ for (i = 0; i < numbersOfPeople; i++) {
   }
 }
 
+let max = ages[0];
+
+for (i = 0; i < numbersOfPeople; i++) {
+  if (ages[i] > max) {
+    max = ages[i];
+  }
+}
+
+console.log("Largest Number is " + max);
+
 // const numbers = [12, 45, 67, 3, 89, 23];
 // let max = numbers[0]; // Start with the first element
 
