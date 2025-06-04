@@ -32,13 +32,8 @@ for (i = 0; i < numbersOfPeople; i++) {
 
 console.log("Largest Number is " + max);
 
-// const numbers = [12, 45, 67, 3, 89, 23];
-// let max = numbers[0]; // Start with the first element
+const array = [5, 4, 3, 2, 1, 0];
 
-// for (let i = 1; i < numbers.length; i++) {
-//   if (numbers[i] > max) {
-//     max = numbers[i]; // Update max if current number is greater
-//   }
-// }
-
-// console.log("Greatest number is:", max);
+for (i = array.length - 1; i >= 0; i--) {
+  console.log(array[i]);
+}
