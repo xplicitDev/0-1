@@ -1,6 +1,6 @@
 let count = 30;
 
-const countdown = setInterval(() => {
+function counter() {
   console.log(count);
   count--;
 
@@ -8,4 +8,6 @@ const countdown = setInterval(() => {
     clearInterval(countdown);
     console.log("Countdown finished!");
   }
-}, 1000); // 1000 milliseconds = 1 second
+}
+
+const countdown = setInterval(counter, 1000);
