@@ -5,37 +5,48 @@
 */
 
 function isAnagram(str1, str2) {
+  // best & easiest method
   str1 = str1.toLowerCase();
   str2 = str2.toLowerCase();
 
-  if (str1.length !== str2.length) {
+  if (str1.length != str2.length) {
     return false;
   }
 
-  // str2 in an array
-  const used = [];
-  for (i = 0; i < str2.length; i++) {
-    used[i] = false;
-  }
+  // using split, sort, join
+  const sorted1 = str1.split("").sort().join("");
+  const sorted2 = str2.split("").sort().join("");
 
-  // matching str1 & str2
-  for (i = 0; i < str1.length; i++) {
-    let found = false;
+  // Compare the sorted versions
+  return sorted1 === sorted2;
 
-    for (j = 0; j < str2.length; j++) {
-      if (str1[i] === str2[j] && !used[j]) {
-        used[j] = true;
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
-      return false;
-    }
-  }
-
-  return true;
+  // Another Method
+  // dumb way ig
+  // str1 = str1.toLowerCase();
+  // str2 = str2.toLowerCase();
+  // if (str1.length !== str2.length) {
+  //   return false;
+  // }
+  // // str2 in an array
+  // const used = [];
+  // for (i = 0; i < str2.length; i++) {
+  //   used[i] = false;
+  // }
+  // // matching str1 & str2
+  // for (i = 0; i < str1.length; i++) {
+  //   let found = false;
+  //   for (j = 0; j < str2.length; j++) {
+  //     if (str1[i] === str2[j] && !used[j]) {
+  //       used[j] = true;
+  //       found = true;
+  //       break;
+  //     }
+  //   }
+  //   if (!found) {
+  //     return false;
+  //   }
+  // }
+  // return true;
 }
 
 module.exports = isAnagram;
