@@ -22,16 +22,6 @@ for (i = 0; i < numbersOfPeople; i++) {
   }
 }
 
-let max = ages[0];
-
-for (i = 0; i < numbersOfPeople; i++) {
-  if (ages[i] > max) {
-    max = ages[i];
-  }
-}
-
-console.log("Largest Number is " + max);
-
 const array = [5, 4, 3, 2, 1, 0];
 
 for (i = array.length - 1; i >= 0; i--) {
