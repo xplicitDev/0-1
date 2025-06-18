@@ -1,13 +1,18 @@
 const express = require("express");
-const bodyparser = require("body-parser");
+// const bodyParser = require("body-parser");
 const port = 3000;
 const app = express();
 
+//middleware
+// app.use(bodyParser.json());
+
+///////////////
 app.get("/masood", function (req, res) {
   res.send("Hello Masood Khan!");
 });
 
 app.get("/", function (req, res) {
+  // console.log(req.body);
   res.send("Hello World!");
 });
 
