@@ -1,10 +1,10 @@
 const express = require("express");
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const port = 3000;
 const app = express();
 
 //middleware
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 ///////////////
 app.get("/masood", function (req, res) {
@@ -12,7 +12,7 @@ app.get("/masood", function (req, res) {
 });
 
 app.get("/", function (req, res) {
-  // console.log(req.body);
+  console.log(req.body);
   res.send("Hello World!");
 });
 
