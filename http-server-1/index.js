@@ -6,7 +6,7 @@ const app = express();
 //middleware
 app.use(bodyParser.json());
 
-///////////////
+//////////
 app.get("/masood", function (req, res) {
   res.send("Hello Masood Khan!");
 });
