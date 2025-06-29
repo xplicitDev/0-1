@@ -1,19 +1,21 @@
-const express = require("express");
+//basic query params
 
-const app = express();
+// const express = require("express");
 
-function sum(n) {
-  let ans = 0;
-  for (i = 1; i <= n; i++) {
-    ans = ans + i;
-  }
-  return ans;
-}
+// const app = express();
 
-app.get("/", function (req, res) {
-  const n = req.query.n;
-  const ans = sum(n);
-  res.send("Hello your answer is " + ans);
-});
+// function sum(n) {
+//   let ans = 0;
+//   for (i = 1; i <= n; i++) {
+//     ans = ans + i;
+//   }
+//   return ans;
+// }
 
-app.listen(3000);
+// app.get("/", function (req, res) {
+//   const n = req.query.n;
+//   const ans = sum(n);
+//   res.send("Hello your answer is " + ans);
+// });
+
+// app.listen(3000);
