@@ -46,4 +46,10 @@ app.post("/", function (req, res) {
   });
 });
 
+app.put("/", function (req, res) {
+  for (i = 0; i < users[0].kidneys.length; i++) {
+    users[0].kidneys[i].healthy = true;
+  }
+  res.json({});
+});
 app.listen(3000);
