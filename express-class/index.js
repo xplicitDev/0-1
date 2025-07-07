@@ -19,3 +19,28 @@
 // });
 
 // app.listen(3000);
+
+// map
+
+const arr = [1, 2, 3, 4, 5];
+
+const even = (i) => {
+  return i * 2;
+};
+const ans = arr.map(even);
+console.log(ans);
+
+//filter
+
+const arr01 = [1, 2, 3, 4, 5];
+
+function filterLogic(n) {
+  if (n % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const ans01 = arr.filter(filterLogic);
+console.log(ans01);
