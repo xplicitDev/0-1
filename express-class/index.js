@@ -20,7 +20,7 @@
 
 // app.listen(3000);
 
-// map
+//--------------- map
 
 const arr = [1, 2, 3, 4, 5];
 
@@ -30,7 +30,7 @@ const even = (i) => {
 const ans = arr.map(even);
 console.log(ans);
 
-//filter
+//-----------------filter
 
 const arr01 = [1, 2, 3, 4, 5];
 
