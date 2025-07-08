@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.get("/", function (req, res) {
   const masoodKidneys = users[0].kidneys;
-  // console.log(masoodKidneys);
+
   const numberOfKidneys = masoodKidneys.length;
 
   let numberOfHealthyKidneys = 0;
