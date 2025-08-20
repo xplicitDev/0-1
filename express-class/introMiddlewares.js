@@ -7,8 +7,8 @@ app.get("/health-checkup", function (req, res) {
   const password = req.headers.password;
   const kidneyId = req.query.kidneyId;
 
+  //for these check points middleware is going to be used,so we can add a checkpoint anywhere before the request actually processes
   if (username != "masood" || password != "pass") {
-    s;
     res.status(400).json({ msg: "Somethings up with your inputs" });
     return;
   }
