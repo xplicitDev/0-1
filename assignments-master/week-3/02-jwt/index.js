@@ -21,7 +21,7 @@ function verifyJwt(token) {
   let ans = true;
   try {
     jwt.verify(token, jwtPassword);
-  } catch {
+  } catch (e) {
     ans = false;
   }
   return ans;
