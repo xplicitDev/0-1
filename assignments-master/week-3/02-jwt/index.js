@@ -18,7 +18,13 @@ function signJwt(username, password) {
 }
 
 function verifyJwt(token) {
-  // Your code here
+  let ans = true;
+  try {
+    jwt.verify(token, jwtPassword);
+  } catch {
+    ans = false;
+  }
+  return ans;
 }
 
 function decodeJwt(token) {
