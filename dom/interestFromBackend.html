@@ -17,20 +17,19 @@
           });
         }
       );
-      // const sum = document.getElementById("finalSum");
-      // sum.innerHTML = parseInt(a) + parseInt(b);
     }
+    // UPDDATE THIS ALSO
+    // ASYNC AWAIT
+    // async function populateDiv2() {
+    //   const a = document.getElementById("firstNumber").value;
+    //   const b = document.getElementById("secondNumber").value;
 
-    async function populateDiv2() {
-      const a = document.getElementById("firstNumber").value;
-      const b = document.getElementById("secondNumber").value;
-
-      const response = await etch(
-        "https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b
-      );
-      const ans = await response.text();
-      document.getElementById("finalSum").innerHTML = ans;
-    }
+    //   const response = await etch(
+    //     "http://localhost:3030/sum?a=" + a + "&b=" + b
+    //   );
+    //   const ans = await response.text();
+    //   document.getElementById("finalSum").innerHTML = ans;
+    // }
   </script>
   <body>
     <input id="firstNumber" type="text" placeholder="First Number" />
@@ -43,4 +42,4 @@
   </body>
 </html>
 
-<!-- https://sum-server.100xdevs.com/interest?principal=100&rate=5&time=22 -->
+<!-- http://localhost:3030/interest?principal=100&rate=5&time=22 -->
