@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { string, number } = require("zod");
 
 // Connect to MongoDB
-mongoose.connect(`${process.env.MONGODB_URI}`);
+mongoose.connect();
 //`${process.env.MONGODB_URI}
 
 // Define schemas
@@ -14,7 +14,7 @@ const AdminSchema = new mongoose.Schema({
 const UserSchema = new mongoose.Schema({
   username: string,
   password: string,
-  purchasedourses: [
+  purchasedCourses: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "course",
