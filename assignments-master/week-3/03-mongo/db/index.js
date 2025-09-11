@@ -2,13 +2,7 @@ const mongoose = require("mongoose");
 const { string, number } = require("zod");
 
 // Connect to MongoDB
-<<<<<<< HEAD
 mongoose.connect();
-=======
-mongoose.connect(
-  "mongodb+srv://masoodCohort:1234567890@cluster0.ze2xvhy.mongodb.net/"
-);
->>>>>>> HEAD@{1}
 //`${process.env.MONGODB_URI}
 
 // Define schemas
