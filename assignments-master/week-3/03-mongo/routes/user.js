@@ -5,7 +5,6 @@ const { User, Course } = require("../db");
 
 // User Routes
 router.post("/signup", (req, res) => {
-  // Implement user signup logic
   const username = req.body.username;
   const password = req.body.password;
   User.create({
@@ -13,13 +12,11 @@ router.post("/signup", (req, res) => {
     password,
   });
   res.json({
-    message: "User created successfully",
+    msg: "User created successfully",
   });
 });
 
 router.get("/courses", async (req, res) => {
-  // Implement listing all courses logic
-  // Implement fetching all courses logic
   const response = await Course.find({});
 
   res.json({
@@ -28,7 +25,6 @@ router.get("/courses", async (req, res) => {
 });
 
 router.post("/courses/:courseId", userMiddleware, async (req, res) => {
-  // Implement course purchase logic
   const courseId = req.params.courseId;
   const username = req.headers.username;
 
@@ -43,12 +39,11 @@ router.post("/courses/:courseId", userMiddleware, async (req, res) => {
     }
   );
   res.json({
-    message: "Purchase complete!",
+    msg: "Purchase complete!",
   });
 });
 
 router.get("/purchasedCourses", userMiddleware, async (req, res) => {
-  // Implement fetching purchased courses logic
   const user = await User.findOne({
     username: req.headers.username,
   });
