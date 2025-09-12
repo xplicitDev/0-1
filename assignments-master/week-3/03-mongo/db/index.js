@@ -3,7 +3,6 @@ const { string, number } = require("zod");
 
 // Connect to MongoDB
 mongoose.connect();
-//`${process.env.MONGODB_URI}
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
