@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { string, number } = require("zod");
 
 // Connect to MongoDB
-mongoose.connect();
+mongoose.connect("");
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
