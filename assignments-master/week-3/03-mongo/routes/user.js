@@ -4,10 +4,10 @@ const userMiddleware = require("../middleware/user");
 const { User, Course } = require("../db");
 
 // User Routes
-router.post("/signup", (req, res) => {
+router.post("/signup", async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  User.create({
+  await User.create({
     username,
     password,
   });
