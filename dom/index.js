@@ -68,10 +68,7 @@ app.get("/interest", (req, res) => {
   const time = parseInt(req.query.time);
   const interest = (principal * rate * time) / 100;
   const total = principal + interest;
-  res.send({
-    total: total,
-    interest: interest,
-  });
+  res.send(`Total: ${total}, Interest: ${interest}`);
 });
 
 function getRandomNumber(max) {
