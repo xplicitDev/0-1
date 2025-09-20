@@ -1,10 +1,9 @@
 import { useState } from "react";
 import "./App.css";
+import { CreateTodo } from "./componenets/CreateTodo";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div></div>;
+  return <CreateTodo></CreateTodo>;
 }
 
 export default App;
