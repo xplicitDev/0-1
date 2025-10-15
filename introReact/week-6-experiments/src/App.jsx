@@ -1,19 +1,18 @@
 function App() {
   return (
     <>
-      <CardWrapper innerComponent={TextComponenet} />
+      <CardWrapper>Hi There!</CardWrapper>
+      <CardWrapper>Hi There Again!</CardWrapper>
+      <CardWrapper>
+        <CardWrapper>Hi There Again & Again!!</CardWrapper>
+      </CardWrapper>
     </>
   );
 }
 
-function TextComponenet() {
+function CardWrapper({ children }) {
   return (
-    <>
-      <div>Hello!</div>
-    </>
+    <div style={{ border: "3px solid black", padding: 20 }}>{children}</div>
   );
-}
-function CardWrapper({}) {
-  return <></>;
 }
 export default App;
