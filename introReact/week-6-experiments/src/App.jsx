@@ -1,9 +1,35 @@
+import { useEffect, useState } from "react";
+
 function App() {
-  return <></>;
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080").then(async function (res) {
+      const json = await res.json();
+      setTodos(json.todos);
+    });
+  }, []);
+
+  return (
+    <>
+      {todos.map((todo) => (
+        <Todos
+          key={todo.id}
+          title={todo.title}
+          description={todo.description}
+        />
+      ))}
+    </>
+  );
 }
 
-function CardWrapper({}) {
-  return;
+function Todos({ title, description }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <h4>{description}</h4>
+    </div>
+  );
 }
 export default App;
 
