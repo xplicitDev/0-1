@@ -1,52 +1,32 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import "./App.css";
+import { useState } from "react";
 
 function App() {
-  const [selectedId, setSelectedId] = useState(1);
+  const [counter, setCounter] = useState(0);
+  const [inputValue, setInputValue] = useState(1);
 
-  return (
-    <>
-      <button
-        onClick={function () {
-          setSelectedId(1);
-        }}
-      >
-        1
-      </button>
-      <button
-        onClick={function () {
-          setSelectedId(2);
-        }}
-      >
-        2
-      </button>
-      <button
-        onClick={function () {
-          setSelectedId(3);
-        }}
-      >
-        3
-      </button>
-
-      <Todo id={selectedId} />
-    </>
-  );
-}
-
-function Todo({ id }) {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/todos").then(function (response) {
-      setTodos(response.data.todos);
-    });
-  }, [id]);
+  let count = 0;
+  for (let i = 1; i <= inputValue; i++) {
+    count = count + i;
+  }
 
   return (
     <div>
-      <h1>{todos.title}</h1>
-      <h4>{todos.description}</h4>
+      <input
+        onChange={function (e) {
+          setInputValue(e.target.value);
+        }}
+        placeholder={"Find sum from 1 to n"}
+      ></input>
+      <br />
+      Sum from 1 to {inputValue} is {count}
+      <br />
+      <button
+        onClick={() => {
+          setCounter(counter + 1);
+        }}
+      >
+        Counter ({counter})
+      </button>
     </div>
   );
 }
