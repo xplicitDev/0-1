@@ -1,34 +1,24 @@
-import { memo, useCallback, useState } from "react";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [exchangeData, setExchangeData] = useState({});
+  const [bankData, setBankData] = useState({});
 
-  const onClick = useCallback(() => {
-    console.log("child clicked");
-  }, []);
+  fetch("https://google.com", async (res) => {
+    const json = await res.json();
+    setBankData(json);
+    // Assume it is { income: 100 }
+  });
 
-  return (
-    <div>
-      <Child onClick={onClick} />
-      <button
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        Click me {count}
-      </button>
-    </div>
-  );
+  setTimeout(() => {
+    setExchangeData({
+      returns: 100,
+    });
+  }, 1000);
+
+  const incomeTax = (bankData.income + exchangeData) * 0.3;
+
+  return <div>hi there, your income tax returns are {incomeTax}</div>;
 }
-
-const Child = memo(({ onClick }) => {
-  console.log("child render");
-
-  return (
-    <div>
-      <button onClick={onClick}>Button clicked</button>
-    </div>
-  );
-});
 
 export default App;
